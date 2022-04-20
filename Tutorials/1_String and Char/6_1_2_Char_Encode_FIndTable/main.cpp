@@ -10,7 +10,7 @@ int main()
 				"qwertyuiop[]\\"
 				"asdfghjkl;'"
 				"zxcvbnm,./";
-				
+	 
 	
 	while(cin.get(c)){
 		c = tolower(c);
