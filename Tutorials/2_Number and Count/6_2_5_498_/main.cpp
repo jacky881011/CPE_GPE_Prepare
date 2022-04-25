@@ -24,8 +24,7 @@ int derivative(int x, int max)
 
 int main()
 {
-	SetArray();
-	/*
+
 	int x, n;
 	while(scanf("%d",&x) != EOF)
 	{
@@ -39,37 +38,8 @@ int main()
 		
 		printf("%d", derivative(x, n));
 		
-	}	*/
+	}	
 }
-
-
-int arr[100];
-
-void SetArray()
-{	
-	int n, i;
-	
-	for(n = 0; ; n++)
-	{
-		scanf("%d", &arr[n]);
-		if(getchar() == '\n')
-		{
-			break;
-		}
-	}
-	
-	int size = sizeof(arr)/sizeof(arr[0]);
-	
-	for(int i =0 ; i < 10 ; i++)
-	{
-		cout << arr[i] << endl;
-	}
-}
-
-
-
-
-
 
 
 
