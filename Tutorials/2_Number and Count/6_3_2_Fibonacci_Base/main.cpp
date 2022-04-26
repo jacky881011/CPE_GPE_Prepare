@@ -1,67 +1,40 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-
-int fib[100];
-int arr[100];
-int count=0;
-
-
-void fibo(int n)
+int main() 
 {
-	count = 0;
-	fib[0] = 1;
-	fib[1] = 1;
+	int f[40] = {0, 1};
 	
-	for(int i = 2; i <= 100; i++)
+	// set the fibonacci
+	for(int i = 2; i <40; i++)
 	{
-		fib[i] = fib[i-1]+fib[i-2];
-		
-		count++;
-		if(fib[i] >= n)
-		{
-			break;
-			count = i;
-		}
+		f[i] = f[i-2] + f[i-1];
 	}
+	// cout << f[39] << endl;
 	
-}
-
-int main()
-{
 	int n;
 	cin >> n;
 	while(n--)
 	{
-		int k, z;
-		cin >> k;
-		fibo(k);
-		int  max = k - fib[count];
-		for(int j = 0; j <= count ; j++)
+		int m;
+		cin >> m;
+		cout << m << " = ";
+		
+		bool preone = false;
+		
+		for(int k = 39; k>=2; k--)
 		{
-			if(fib[j] == max){
-				z = j;
-				break;
-			}
-		}
-		for(int i = 0; i <= count; i++)
-		{
-			if(i == z || i==count)
+			if(m >= f[k])
 			{
-				arr[i] = 1;
+				cout << "1";
+				m -= f[k];
+				preone = true;
+			}else if(preone){
+				cout <<"0";
 			}
-			else{
-				arr[i] = 0;
-			} 
-		 } 
-		 
-		 for(int j = count; j >= 0 ; j--)
-		{
-			cout << arr[j] ;
 		}
 		
-		cout << endl;
-		
-		
+		cout << " (fib)" << endl;
+		 
 	}
 }
